@@ -4,8 +4,6 @@ var domReady = function (callback) {
     : document.addEventListener("DOMContentLoaded", callback);
 };
 domReady(function () {
-  // REST
-
   const fetchGifs = (searchQuery, limit) => {
     let url = `https://api.giphy.com/v1/gifs/search?api_key=4zv45wmD5vJvLn2UE3B4tNBY1ny9kZZV&q=${searchQuery}&limit=${limit}`;
 
@@ -20,9 +18,9 @@ domReady(function () {
           let str = `<img src=${img.images.original.url} />`;
           html = html + str;
         }
-        // How is this written in vanilla Js?
+
         $("#result").html(html);
-        // document.getElementById("result").html("html");
+        // document.getElementById("result").html("html");?
 
         document.querySelector("#search-input").value.trim();
       });
